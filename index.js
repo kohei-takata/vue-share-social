@@ -6,7 +6,8 @@ const VueShareSocial = {}
 VueShareSocial.install = (Vue, options) => {
   Vue.mixin({
     components: {
-      ShareFacebook
+      ShareFacebook,
+      ShareTwitter
     }
   })
 }
