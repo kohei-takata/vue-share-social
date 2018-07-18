@@ -3,16 +3,22 @@
     <ShareFacebook
      url="http://recruit.istyle.co.jp/career/"
     />
+    <ShareTwitter
+            url="http://recruit.istyle.co.jp/career/"
+            title="recruit page"
+    />
   </div>
 </template>
 
 <script>
 import ShareFacebook from '@/components/ShareFacebook.vue'
+import ShareTwitter from '@/components/ShareTwitter.vue'
 
 export default {
   name: 'app',
   components: {
-    ShareFacebook
+    ShareFacebook,
+    ShareTwitter
   }
 }
 </script>
