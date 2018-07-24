@@ -7,6 +7,10 @@
       url="http://recruit.istyle.co.jp/career/"
       title="recruit page"
     />
+    <ShareHatena
+      url="http://recruit.istyle.co.jp/career/"
+      title="recruit page"
+    />
 
     <div>
       <FacebookLogo/>
@@ -21,6 +25,7 @@
 <script>
 import ShareFacebook from '@/components/ShareFacebook.vue'
 import ShareTwitter from '@/components/ShareTwitter.vue'
+import ShareHatena from '@/components/ShareHatena.vue'
 
 import FacebookLogo from '@/components/svg/FacebookLogo.vue'
 import TwitterLogo from '@/components/svg/TwitterLogo.vue'
@@ -33,6 +38,7 @@ export default {
   components: {
     ShareFacebook,
     ShareTwitter,
+    ShareHatena,
     FacebookLogo,
     TwitterLogo,
     GooglePlusLogo,
