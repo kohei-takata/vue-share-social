@@ -1,6 +1,6 @@
 <template>
   <a @click.prevent="openShareWindow">
-    Line Good
+    Line Send
   </a>
 </template>
 

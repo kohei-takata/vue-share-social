@@ -9,7 +9,7 @@ describe('ShareLine.vue', () => {
       }
     })
     let html = `<a>
-  Line Good
+  Line Send
 </a>`
     expect(wrapper.html()).toMatch(html)
   })
