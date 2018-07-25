@@ -1,4 +1,5 @@
 # vue-share-social
+[![Build Status](https://api.travis-ci.org/kohei-takata/vue-share-social.svg?branch=master)](https://travis-ci.org/kohei-takata/vue-share-social)
 
 ## Usage
 
