@@ -14,10 +14,6 @@ export default {
       type: String,
       default: defaultHref
     },
-    title: {
-      type: String,
-      default: ''
-    },
     windowWidth: {
       type: Number,
       default: 640

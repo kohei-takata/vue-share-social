@@ -16,7 +16,6 @@
     />
     <ShareGooglePlus
       url="http://recruit.istyle.co.jp/career/"
-      title="recruit page"
     />
 
     <div>
