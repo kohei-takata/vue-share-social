@@ -2,6 +2,7 @@ import ShareFacebook from '@/components/ShareFacebook.vue'
 import ShareTwitter from '@/components/ShareTwitter.vue'
 import ShareHatena from '@/components/ShareHatena.vue'
 import ShareLine from '@/components/ShareLine.vue'
+import ShareGooglePlus from '@/components/ShareGooglePlus.vue'
 
 const VueShareSocial = {}
 
@@ -11,7 +12,8 @@ VueShareSocial.install = (Vue, options) => {
       ShareFacebook,
       ShareTwitter,
       ShareHatena,
-      ShareLine
+      ShareLine,
+      ShareGooglePlus
     }
   })
 }
@@ -21,5 +23,6 @@ export {
   ShareFacebook,
   ShareTwitter,
   ShareHatena,
-  ShareLine
+  ShareLine,
+  ShareGooglePlus
 }

@@ -14,6 +14,9 @@
     <ShareLine
       url="http://recruit.istyle.co.jp/career/"
     />
+    <ShareGooglePlus
+      url="http://recruit.istyle.co.jp/career/"
+    />
 
     <div>
       <FacebookLogo/>
@@ -30,6 +33,7 @@ import ShareFacebook from '@/components/ShareFacebook.vue'
 import ShareTwitter from '@/components/ShareTwitter.vue'
 import ShareHatena from '@/components/ShareHatena.vue'
 import ShareLine from '@/components/ShareLine.vue'
+import ShareGooglePlus from '@/components/ShareGooglePlus.vue'
 
 import FacebookLogo from '@/components/svg/FacebookLogo.vue'
 import TwitterLogo from '@/components/svg/TwitterLogo.vue'
@@ -44,6 +48,7 @@ export default {
     ShareTwitter,
     ShareHatena,
     ShareLine,
+    ShareGooglePlus,
     FacebookLogo,
     TwitterLogo,
     GooglePlusLogo,
