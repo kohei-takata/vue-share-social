@@ -37,7 +37,7 @@ export default {
     this.setIconSize()
   },
   mounted () {
-    // this.getShareCount()
+    this.getShareCount()
   },
   methods: {
     setIconSize () {
@@ -97,16 +97,16 @@ export default {
   color: #ffffff;
 }
 .facebook--btn.s {
-  font-size: 12px;
-  line-height: 25px;
+  font-size: 10px;
+  line-height: 28px;
 }
 .facebook--btn.m {
-  font-size: 14px;
-  line-height: 35px;
+  font-size: 13px;
+  line-height: 38px;
 }
 .facebook--btn.l {
   font-size: 16px;
-  line-height: 45px;
+  line-height: 46px;
 }
 .facebook--btn.s > svg {
   margin: 7px 0 0 0;
