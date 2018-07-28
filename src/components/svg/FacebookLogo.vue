@@ -7,27 +7,14 @@
 </template>
 
 <script>
+import svgProps from '@/utils/svgProps.js'
+
 export default {
+  mixins: [svgProps],
   props: {
-    width: {
-      type: Number,
-      default: 25
-    },
-    height: {
-      type: Number,
-      default: 25
-    },
     color: {
       type: String,
       default: '#4267b2'
-    }
-  },
-  data () {
-    return {
-      style: {
-        width: this.$props.width,
-        height: this.$props.height
-      }
     }
   }
 }
