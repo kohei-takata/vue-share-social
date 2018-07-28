@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <ShareFacebook
+      size="s"
+      type="circle"
+      :elevation=1
       url="http://recruit.istyle.co.jp/career/"
     />
     <ShareTwitter
