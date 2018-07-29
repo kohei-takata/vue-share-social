@@ -1,38 +1,54 @@
 <template>
-  <a @click.prevent="openShareWindow">
-    Facebook Share
-    {{ count }}
+  <a class="facebook--btn"
+    :class="btnClass"
+    :style="btnStyle"
+    @click.prevent="openShareWindow">
+    <span
+      v-if="count > 0">
+      {{ count }}
+    </span>
+    <FacebookLogo
+      :width="icon.width"
+      :height="icon.height"
+      color="#FFFFFF"
+      v-if="count === 0"/>
   </a>
 </template>
 
 <script>
-import { defaultHref } from '@/utils/defaultHref.js'
+import { size } from '@/utils/enums.js'
+import buttonProps from '@/utils/buttonProps.js'
+import FacebookLogo from '@/components/svg/FacebookLogo.vue'
 
 export default {
   name: 'ShareFacebook',
-  props: {
-    url: {
-      type: String,
-      default: defaultHref
-    },
-    windowWidth: {
-      type: Number,
-      default: 640
-    },
-    windowHeight: {
-      type: Number,
-      default: 640
-    }
-  },
+  mixins: [buttonProps],
+  components: {FacebookLogo},
   data () {
     return {
+      icon: {
+        width: 12,
+        height: 12
+      },
       count: 0
     }
+  },
+  created () {
+    this.setIconSize()
   },
   mounted () {
     this.getShareCount()
   },
   methods: {
+    setIconSize () {
+      switch (this.size) {
+        case size.m:
+          this.icon = {width: 16, height: 16}
+          break
+        case size.l:
+          this.icon = {width: 20, height: 20}
+      }
+    },
     openShareWindow () {
       let width = this.$props.windowWidth
       let height = this.$props.windowHeight
@@ -67,3 +83,38 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.facebook--btn {
+  text-align: center;
+  background-color: #4267b2;
+  cursor: pointer;
+}
+.facebook--btn:hover {
+  background-color: #4e76c7;
+}
+.facebook--btn > span {
+  color: #ffffff;
+}
+.facebook--btn.s {
+  font-size: 10px;
+  line-height: 28px;
+}
+.facebook--btn.m {
+  font-size: 13px;
+  line-height: 38px;
+}
+.facebook--btn.l {
+  font-size: 16px;
+  line-height: 46px;
+}
+.facebook--btn.s > svg {
+  margin: 7px 0 0 0;
+}
+.facebook--btn.m > svg {
+  margin: 10px 0 0 0;
+}
+.facebook--btn.l > svg {
+  margin: 13px 0 0 0;
+}
+</style>
