@@ -26,7 +26,7 @@ export default {
   name: 'ShareFacebook',
   mixins: [buttonProps],
   components: {
-    Ripple,
+    RippleEffect,
     FacebookLogo
   },
   data () {
