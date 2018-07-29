@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'RippleEffect',
   props: {
     clickEvent: {
       required: true

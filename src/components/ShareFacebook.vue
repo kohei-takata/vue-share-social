@@ -3,7 +3,7 @@
     :class="btnClass"
     :style="btnStyle"
     @click.prevent="openShareWindow">
-    <Ripple :clickEvent="clickEvent"/>
+    <RippleEffect :clickEvent="clickEvent"/>
     <span
       v-if="count > 0">
       {{ count }}
@@ -19,7 +19,7 @@
 <script>
 import { size } from '@/utils/enums.js'
 import buttonProps from '@/utils/buttonProps.js'
-import Ripple from '@/components/Ripple.vue'
+import RippleEffect from '@/components/RippleEffect.vue'
 import FacebookLogo from '@/components/svg/FacebookLogo.vue'
 
 export default {
