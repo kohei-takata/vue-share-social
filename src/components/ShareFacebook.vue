@@ -3,6 +3,7 @@
     :class="btnClass"
     :style="btnStyle"
     @click.prevent="openShareWindow">
+    <RippleEffect :clickEvent="clickEvent"/>
     <span
       v-if="count > 0">
       {{ count }}
@@ -18,19 +19,24 @@
 <script>
 import { size } from '@/utils/enums.js'
 import buttonProps from '@/utils/buttonProps.js'
+import RippleEffect from '@/components/RippleEffect.vue'
 import FacebookLogo from '@/components/svg/FacebookLogo.vue'
 
 export default {
   name: 'ShareFacebook',
   mixins: [buttonProps],
-  components: {FacebookLogo},
+  components: {
+    RippleEffect,
+    FacebookLogo
+  },
   data () {
     return {
       icon: {
         width: 12,
         height: 12
       },
-      count: 0
+      count: 0,
+      clickEvent: null
     }
   },
   created () {
@@ -49,7 +55,8 @@ export default {
           this.icon = {width: 20, height: 20}
       }
     },
-    openShareWindow () {
+    openShareWindow (e) {
+      this.clickEvent = e
       let width = this.$props.windowWidth
       let height = this.$props.windowHeight
       let left = (screen.width / 2) - (width / 2)
@@ -89,9 +96,6 @@ export default {
   text-align: center;
   background-color: #4267b2;
   cursor: pointer;
-}
-.facebook--btn:hover {
-  background-color: #4e76c7;
 }
 .facebook--btn > span {
   color: #ffffff;
