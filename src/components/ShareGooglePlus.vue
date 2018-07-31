@@ -1,30 +1,53 @@
 <template>
-  <a @click.prevent="openShareWindow">
-    GooglePlus Share
+  <a class="googleplus--btn"
+    :class="btnClass"
+    :style="btnStyle"
+    @click.prevent="openShareWindow">
+    <RippleEffect :clickEvent="clickEvent"/>
+    <GooglePlusLogo
+      :width="icon.width"
+      :height="icon.height"
+      color="#FFFFFF"/>
   </a>
 </template>
 
 <script>
-import {defaultHref} from '@/utils/defaultHref.js'
+import { size } from '@/utils/enums.js'
+import buttonProps from '@/utils/buttonProps.js'
+import RippleEffect from '@/components/RippleEffect.vue'
+import GooglePlusLogo from '@/components/svg/GooglePlusLogo.vue'
 
 export default {
   name: 'ShareGooglePlus',
-  props: {
-    url: {
-      type: String,
-      default: defaultHref
-    },
-    windowWidth: {
-      type: Number,
-      default: 640
-    },
-    windowHeight: {
-      type: Number,
-      default: 640
+  mixins: [buttonProps],
+  components: {
+    RippleEffect,
+    GooglePlusLogo
+  },
+  data () {
+    return {
+      icon: {
+        width: 12,
+        height: 12
+      },
+      clickEvent: null
     }
   },
+  created () {
+    this.setIconSize()
+  },
   methods: {
-    openShareWindow () {
+    setIconSize () {
+      switch (this.size) {
+        case size.m:
+          this.icon = {width: 16, height: 16}
+          break
+        case size.l:
+          this.icon = {width: 20, height: 20}
+      }
+    },
+    openShareWindow (e) {
+      this.clickEvent = e
       let width = this.$props.windowWidth
       let height = this.$props.windowHeight
       let left = (screen.width / 2) - (width / 2)
@@ -40,3 +63,35 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.googleplus--btn {
+  text-align: center;
+  background-color: #D95946;
+  cursor: pointer;
+}
+.googleplus--btn > span {
+  color: #ffffff;
+}
+.googleplus--btn.s {
+  font-size: 10px;
+  line-height: 28px;
+}
+.googleplus--btn.m {
+  font-size: 13px;
+  line-height: 38px;
+}
+.googleplus--btn.l {
+  font-size: 16px;
+  line-height: 46px;
+}
+.googleplus--btn.s > svg {
+  margin: 7px 0 0 0;
+}
+.googleplus--btn.m > svg {
+  margin: 10px 0 0 0;
+}
+.googleplus--btn.l > svg {
+  margin: 13px 0 0 0;
+}
+</style>
