@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import { size } from '@/utils/enums.js'
-import buttonProps from '@/utils/buttonProps.js'
-import RippleEffect from '@/components/RippleEffect.vue'
-import TwitterLogo from '@/components/svg/TwitterLogo.vue'
+import { size } from '../utils/enums.js'
+import buttonProps from '../utils/buttonProps.js'
+import RippleEffect from './RippleEffect.vue'
+import TwitterLogo from './svg/TwitterLogo.vue'
 
 export default {
   name: 'ShareTwitter',

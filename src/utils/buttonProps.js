@@ -1,5 +1,5 @@
-import { defaultHref } from '@/utils/defaultHref.js'
-import { size, type } from '@/utils/enums.js'
+import { defaultHref } from './defaultHref.js'
+import { size, type } from './enums.js'
 
 export default {
   props: {

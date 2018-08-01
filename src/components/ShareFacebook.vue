@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import { size } from '@/utils/enums.js'
-import buttonProps from '@/utils/buttonProps.js'
-import RippleEffect from '@/components/RippleEffect.vue'
-import FacebookLogo from '@/components/svg/FacebookLogo.vue'
+import { size } from '../utils/enums.js'
+import buttonProps from '../utils/buttonProps.js'
+import RippleEffect from './RippleEffect.vue'
+import FacebookLogo from './svg/FacebookLogo.vue'
 
 export default {
   name: 'ShareFacebook',

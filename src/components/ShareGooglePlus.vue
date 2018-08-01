@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import { size } from '@/utils/enums.js'
-import buttonProps from '@/utils/buttonProps.js'
-import RippleEffect from '@/components/RippleEffect.vue'
-import GooglePlusLogo from '@/components/svg/GooglePlusLogo.vue'
+import { size } from '../utils/enums.js'
+import buttonProps from '../utils/buttonProps.js'
+import RippleEffect from './RippleEffect.vue'
+import GooglePlusLogo from './svg/GooglePlusLogo.vue'
 
 export default {
   name: 'ShareGooglePlus',
