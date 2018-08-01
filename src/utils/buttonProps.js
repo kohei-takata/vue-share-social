@@ -41,7 +41,9 @@ export default {
       btnStyle: {
         width: '25px',
         height: '25px',
-        display: 'inline-block'
+        display: 'inline-block',
+        overflow: 'hidden',
+        position: 'relative'
       }
     }
   },

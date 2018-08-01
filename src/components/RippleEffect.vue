@@ -42,9 +42,10 @@ export default {
     clickEvent (e) {
       this.isShow = true
       this.deleteRipple()
-      let coversize = e.target.offsetWidth
-      let x = e.pageX - (coversize / 2)
-      let y = e.pageY - (coversize / 2)
+      let coversize = this.$parent.$el.offsetWidth
+      let loc = this.$parent.$el.getBoundingClientRect()
+      let x = e.pageX - loc.left - window.pageXOffset - (coversize / 2)
+      let y = e.pageY - loc.top - window.pageYOffset - (coversize / 2)
       this.style = {
         top: `${y}px`,
         left: `${x}px`,
@@ -58,12 +59,11 @@ export default {
 
 <style scoped>
 .ripple {
-  overflow: hidden;
   position: absolute;
   border-radius: 50%;
-  opacity: 0.35;
+  opacity: 0.5;
   transform: scale(0);
-  background: #FFF;
+  background: #FFFFFF;
   animation: ripple 700ms;
   pointer-events: none;
 }

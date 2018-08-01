@@ -1,34 +1,59 @@
 <template>
-  <a @click.prevent="openShareWindow">
-    Twitter Share
+  <a class="twitter--btn"
+    :class="btnClass"
+    :style="btnStyle"
+    @click.prevent="openShareWindow">
+    <RippleEffect :clickEvent="clickEvent"/>
+    <TwitterLogo
+      :width="icon.width"
+      :height="icon.height"
+      color="#FFFFFF"/>
   </a>
 </template>
 
 <script>
-import {defaultHref} from '@/utils/defaultHref.js'
+import { size } from '@/utils/enums.js'
+import buttonProps from '@/utils/buttonProps.js'
+import RippleEffect from '@/components/RippleEffect.vue'
+import TwitterLogo from '@/components/svg/TwitterLogo.vue'
 
 export default {
   name: 'ShareTwitter',
+  mixins: [buttonProps],
+  components: {
+    RippleEffect,
+    TwitterLogo
+  },
   props: {
-    url: {
-      type: String,
-      default: defaultHref
-    },
     title: {
       type: String,
       default: ''
-    },
-    windowWidth: {
-      type: Number,
-      default: 640
-    },
-    windowHeight: {
-      type: Number,
-      default: 640
     }
   },
+  data () {
+    return {
+      icon: {
+        width: 12,
+        height: 12
+      },
+      clickEvent: null
+    }
+  },
+  created () {
+    this.setIconSize()
+  },
   methods: {
-    openShareWindow () {
+    setIconSize () {
+      switch (this.size) {
+        case size.m:
+          this.icon = {width: 16, height: 16}
+          break
+        case size.l:
+          this.icon = {width: 20, height: 20}
+      }
+    },
+    openShareWindow (e) {
+      this.clickEvent = e
       let width = this.$props.windowWidth
       let height = this.$props.windowHeight
       let left = (screen.width / 2) - (width / 2)
@@ -44,3 +69,35 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.twitter--btn {
+  text-align: center;
+  background-color: #1da1f2;
+  cursor: pointer;
+}
+.twitter--btn > span {
+  color: #ffffff;
+}
+.twitter--btn.s {
+  font-size: 10px;
+  line-height: 28px;
+}
+.twitter--btn.m {
+  font-size: 13px;
+  line-height: 38px;
+}
+.twitter--btn.l {
+  font-size: 16px;
+  line-height: 46px;
+}
+.twitter--btn.s > svg {
+  margin: 7px 0 0 0;
+}
+.twitter--btn.m > svg {
+  margin: 10px 0 0 0;
+}
+.twitter--btn.l > svg {
+  margin: 13px 0 0 0;
+}
+</style>

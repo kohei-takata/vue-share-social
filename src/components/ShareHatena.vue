@@ -1,43 +1,68 @@
 <template>
-  <a @click.prevent="openShareWindow">
-    Hatena Bookmark
-    {{ count }}
+  <a class="hatena--btn"
+    :class="btnClass"
+    :style="btnStyle"
+    @click.prevent="openShareWindow">
+    <RippleEffect :clickEvent="clickEvent"/>
+    <span
+      v-if="count > 0">
+      {{ count }}
+    </span>
+    <HatenaLogo
+      :width="icon.width"
+      :height="icon.height"
+      color="#FFFFFF"
+      v-if="count === 0"/>
   </a>
 </template>
 
 <script>
-import {defaultHref} from '@/utils/defaultHref.js'
+import { size } from '@/utils/enums.js'
+import buttonProps from '@/utils/buttonProps.js'
+import RippleEffect from '@/components/RippleEffect.vue'
+import HatenaLogo from '@/components/svg/HatenaLogo.vue'
 
 export default {
   name: 'ShareHatena',
+  mixins: [buttonProps],
+  components: {
+    RippleEffect,
+    HatenaLogo
+  },
   props: {
-    url: {
-      type: String,
-      default: defaultHref
-    },
     title: {
       type: String,
       default: ''
-    },
-    windowWidth: {
-      type: Number,
-      default: 640
-    },
-    windowHeight: {
-      type: Number,
-      default: 640
     }
   },
   data () {
     return {
-      count: 0
+      icon: {
+        width: 12,
+        height: 12
+      },
+      count: 0,
+      clickEvent: null
     }
+  },
+  created () {
+    this.setIconSize()
   },
   mounted () {
     this.getBookmarkCount()
   },
   methods: {
-    openShareWindow () {
+    setIconSize () {
+      switch (this.size) {
+        case size.m:
+          this.icon = {width: 16, height: 16}
+          break
+        case size.l:
+          this.icon = {width: 20, height: 20}
+      }
+    },
+    openShareWindow (e) {
+      this.clickEvent = e
       let width = this.$props.windowWidth
       let height = this.$props.windowHeight
       let left = (screen.width / 2) - (width / 2)
@@ -71,3 +96,35 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.hatena--btn {
+  text-align: center;
+  background-color: #00a4de;
+  cursor: pointer;
+}
+.hatena--btn > span {
+  color: #ffffff;
+}
+.hatena--btn.s {
+  font-size: 10px;
+  line-height: 28px;
+}
+.hatena--btn.m {
+  font-size: 13px;
+  line-height: 38px;
+}
+.hatena--btn.l {
+  font-size: 16px;
+  line-height: 46px;
+}
+.hatena--btn.s > svg {
+  margin: 7px 0 0 0;
+}
+.hatena--btn.m > svg {
+  margin: 10px 0 0 0;
+}
+.hatena--btn.l > svg {
+  margin: 13px 0 0 0;
+}
+</style>
