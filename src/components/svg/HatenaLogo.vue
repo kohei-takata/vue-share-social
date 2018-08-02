@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import svgProps from '@/utils/svgProps.js'
+import svgProps from '../../utils/svgProps.js'
 
 export default {
   mixins: [svgProps],

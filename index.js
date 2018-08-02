@@ -1,8 +1,8 @@
-import ShareFacebook from '@/components/ShareFacebook.vue'
-import ShareTwitter from '@/components/ShareTwitter.vue'
-import ShareHatena from '@/components/ShareHatena.vue'
-import ShareLine from '@/components/ShareLine.vue'
-import ShareGooglePlus from '@/components/ShareGooglePlus.vue'
+import ShareFacebook from './src/components/ShareFacebook.vue'
+import ShareTwitter from './src/components/ShareTwitter.vue'
+import ShareHatena from './src/components/ShareHatena.vue'
+import ShareLine from './src/components/ShareLine.vue'
+import ShareGooglePlus from './src/components/ShareGooglePlus.vue'
 
 const VueShareSocial = {}
 

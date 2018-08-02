@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import { size } from '@/utils/enums.js'
-import buttonProps from '@/utils/buttonProps.js'
-import RippleEffect from '@/components/RippleEffect.vue'
-import HatenaLogo from '@/components/svg/HatenaLogo.vue'
+import { size } from '../utils/enums.js'
+import buttonProps from '../utils/buttonProps.js'
+import RippleEffect from './RippleEffect.vue'
+import HatenaLogo from './svg/HatenaLogo.vue'
 
 export default {
   name: 'ShareHatena',

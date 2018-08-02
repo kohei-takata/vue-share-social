@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import { size } from '@/utils/enums.js'
-import buttonProps from '@/utils/buttonProps.js'
-import RippleEffect from '@/components/RippleEffect.vue'
-import LineLogo from '@/components/svg/LineLogo.vue'
+import { size } from '../utils/enums.js'
+import buttonProps from '../utils/buttonProps.js'
+import RippleEffect from './RippleEffect.vue'
+import LineLogo from './svg/LineLogo.vue'
 
 export default {
   name: 'ShareLine',
