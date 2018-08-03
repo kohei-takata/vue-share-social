@@ -1,11 +1,14 @@
 {
   "name": "vue-share-social",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
-  "main": "index.js",
+  "files":[
+    "dist/*",
+    "src/*"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name index ./src/bundle.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
