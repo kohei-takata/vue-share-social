@@ -4,8 +4,12 @@
   "private": false,
   "files":[
     "dist/*",
-    "src/*"
+    "src/*",
+    "*.json",
+    "*.js"
   ],
+  "main": "dist/index.umd.js",
+  "module": "dist/index.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name index ./src/bundle.js",
