@@ -48,21 +48,8 @@
 </template>
 
 <script>
-import ShareFacebook from '@/components/ShareFacebook.vue'
-import ShareTwitter from '@/components/ShareTwitter.vue'
-import ShareHatena from '@/components/ShareHatena.vue'
-import ShareLine from '@/components/ShareLine.vue'
-import ShareGooglePlus from '@/components/ShareGooglePlus.vue'
-
 export default {
-  name: 'app',
-  components: {
-    ShareFacebook,
-    ShareTwitter,
-    ShareHatena,
-    ShareLine,
-    ShareGooglePlus
-  }
+  name: 'app'
 }
 </script>
 
