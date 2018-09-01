@@ -5,7 +5,7 @@
     @click.prevent="openShareWindow">
     <RippleEffect :clickEvent="clickEvent"/>
     <span
-      v-if="count > 0">
+      v-if="count !== 0">
       {{ count }}
     </span>
     <FacebookLogo
@@ -112,13 +112,7 @@ export default {
   font-size: 16px;
   line-height: 46px;
 }
-.facebook--btn.s > svg {
-  margin: 7px 0 0 0;
-}
-.facebook--btn.m > svg {
-  margin: 10px 0 0 0;
-}
-.facebook--btn.l > svg {
-  margin: 13px 0 0 0;
+.facebook--btn > svg {
+  vertical-align: middle;
 }
 </style>

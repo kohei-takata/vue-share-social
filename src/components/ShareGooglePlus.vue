@@ -85,13 +85,7 @@ export default {
   font-size: 16px;
   line-height: 46px;
 }
-.googleplus--btn.s > svg {
-  margin: 7px 0 0 0;
-}
-.googleplus--btn.m > svg {
-  margin: 10px 0 0 0;
-}
-.googleplus--btn.l > svg {
-  margin: 13px 0 0 0;
+.googleplus--btn > svg {
+  vertical-align: middle;
 }
 </style>
