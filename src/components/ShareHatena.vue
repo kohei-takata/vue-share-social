@@ -5,7 +5,7 @@
     @click.prevent="openShareWindow">
     <RippleEffect :clickEvent="clickEvent"/>
     <span
-      v-if="count > 0">
+      v-if="count !== 0">
       {{ count }}
     </span>
     <HatenaLogo
@@ -118,13 +118,7 @@ export default {
   font-size: 16px;
   line-height: 46px;
 }
-.hatena--btn.s > svg {
-  margin: 7px 0 0 0;
-}
-.hatena--btn.m > svg {
-  margin: 10px 0 0 0;
-}
-.hatena--btn.l > svg {
-  margin: 13px 0 0 0;
+.hatena--btn > svg {
+  vertical-align: middle;
 }
 </style>
