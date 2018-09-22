@@ -44,7 +44,7 @@ export default {
         display: 'inline-block',
         overflow: 'hidden',
         position: 'relative',
-        boxSizing: 'unset'
+        boxSizing: 'content-box'
       }
     }
   },
