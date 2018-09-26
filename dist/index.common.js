@@ -184,7 +184,8 @@ var defaultHref = function defaultHref() {
         height: '25px',
         display: 'inline-block',
         overflow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        boxSizing: 'content-box'
       }
     };
   },
